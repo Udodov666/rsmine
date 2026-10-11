@@ -1,6 +1,6 @@
 # RSMine — платформа донатов для стримеров
 
-Веб-платформа приёма донатов: публичная страница доната, панель управления стримера и API на Cloudflare Workers. Десктоп-программа для OBS живёт в отдельном репозитории — [rsmine-desktop](https://github.com/jdankinloh/rsmine-desktop).
+Веб-платформа приёма донатов: публичная страница доната, панель управления стримера и API на Cloudflare Workers. Десктоп-программа для OBS живёт в отдельном репозитории — [rsmine-desktop](https://github.com/Udodov666/rsmine-desktop).
 
 **Прод:** [rsmine.ru](https://rsmine.ru) · API: `api.rsmine.ru`
 
@@ -32,11 +32,9 @@ npm run build      # → dist/
 npx wrangler pages deploy dist   # деплой в Cloudflare Pages
 ```
 
-Требования: Node.js 18+ и npm 9+ (зафиксировано в `package.json`).
-
 ### Десктоп-приложение — отдельный репозиторий
 
-Сборка `RSMine-Setup-*.exe` / `RSMine-Portable.exe` живёт в репозитории [rsmine-desktop](https://github.com/Udodov666/rsmine-desktop). Там же — инструкция по самостоятельной сборке. Сам билд в этом репо (в `src/`, `dist/`) делать не нужно.
+Приложение можно самостоятельно собрать из исходников по инструкции в [rsmine-desktop](https://github.com/Udodov666/rsmine-desktop). Сборка в этом репо не нужна.
 
 ## Деплой
 
