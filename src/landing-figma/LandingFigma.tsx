@@ -197,6 +197,14 @@ export default function LandingFigma() {
               <a className="fg-demo-link" href="#/d/landing-demo?demo=1">
                 Посмотреть демо-донат
               </a>
+              <a
+                className="fg-demo-link"
+                href={projectLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Скачать для Windows
+              </a>
             </motion.div>
           </div>
           <motion.div

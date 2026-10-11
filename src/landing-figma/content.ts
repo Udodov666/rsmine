@@ -1,6 +1,9 @@
 /** Figma presentation with project-specific content approved by the user. */
 /** Real project information; external URLs remain empty until supplied. */
-export const projectLinks = { github: '', telegram: '' };
+export const projectLinks = {
+  github: 'https://github.com/jdankinloh/rsmine-desktop/releases/latest',
+  telegram: '',
+};
 export const faqItems = [
   {
     question: 'Что такое RSMine?',
