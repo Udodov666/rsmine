@@ -1,0 +1,65 @@
+/* Decorative window chrome lives outside the unchanged native application theme. */
+.lp-product-wrap{max-width:1320px;margin-top:58px;padding-bottom:10px;isolation:isolate}
+.lp-flow{position:absolute;pointer-events:none;overflow:hidden;z-index:0}
+.lp-flow canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.lp-flow-hero{width:calc(100% + 260px);height:780px;left:50%;top:40%;transform:translateX(-50%);mask-image:linear-gradient(transparent,#000 12%,#000 75%,transparent)}
+.lp-window.lp-product{padding:0;border:1px solid #38383f;border-radius:15px;background:#0b0b0c;box-shadow:0 0 0 5px #ffffff8c,0 24px 55px -28px #181b235c,0 4px 12px #17191d17;z-index:1}
+.lp-window-chrome{height:36px;display:flex;align-items:center;justify-content:center;background:#17171a;border-bottom:1px solid #ffffff0a;position:relative;font-size:11px;color:#9a9aa3;letter-spacing:.1px}
+.lp-window-dots{position:absolute;left:14px;display:flex;gap:7px}
+.lp-window-dots i{width:9px;height:9px;display:block;border-radius:50%;background:#ff6058;box-shadow:inset 0 0 0 1px #00000012}
+.lp-window-dots i:nth-child(2){background:#ffbd2e}.lp-window-dots i:nth-child(3){background:#28c840}
+.lp-window-environment{position:absolute;right:15px;font-size:10px;color:#74747e}
+.lp-shell{display:flex;min-height:644px;position:relative}
+.lp-shell .sidebar{position:relative;inset:auto;width:230px;flex:0 0 230px;z-index:2;border-radius:0;border-right:1px solid #ffffff07;background:#0b0b0c;overflow-y:auto}
+.lp-shell .sidebar nav{padding-top:3px}
+.lp-shell-main{display:flex;flex-direction:column;flex:1;min-width:0}
+.lp-shell-toolbar{display:flex;align-items:center;gap:12px;padding:14px 20px 8px;min-height:58px}
+.lp-shell-breadcrumb{font-size:12px;color:#7e7e85}
+.lp-shell-menu-toggle,.lp-shell-scrim{display:none}
+.lp-shell-pane{padding:10px 20px 18px;min-width:0;flex:1}
+.lp-shell-pane.is-scrolling{height:524px;max-height:524px;flex:0 0 auto;overflow:auto;overscroll-behavior:contain;padding-top:12px}
+.lp-shell-pane>.settings-wrap{max-width:900px}
+.lp-shell-pane .ed-stage{position:static}
+.lp-shell-pane .ed-layout{grid-template-columns:minmax(0,1fr) 380px}
+.lp-shell-pane .page-h1{margin:0;font-size:22px;line-height:1.45;letter-spacing:-.01em}
+.lp-shell-pane .page-sub{margin-top:4px}
+.lp-shell .lp-product-bottom{padding:0 20px;min-height:46px;border-top:1px solid #ffffff06;margin-top:auto;color:#7e7e85}
+.lp-shell .lp-dashboard .dashboard-two-grid>.card{height:382px;padding:20px}
+.lp-shell .lp-dashboard .dashboard-two-side>.card{padding:20px}
+.lp-shell .lp-dashboard .dashboard-two .card-title{font-size:16px;font-weight:500}
+.lp-shell .lp-dashboard .dashboard-two .msg-card .who,.lp-shell .lp-dashboard .dashboard-two .msg-card .txt{font-size:14px}
+.lp-shell .lp-dashboard .dashboard-two .msg-card .when{font-size:12px}
+.lp-shell .lp-dashboard .top-donor-name,.lp-shell .lp-dashboard .top-donor-sum{font-size:13px}
+.lp-shell .lp-dashboard .dashboard-two .msg-card .msg-actions button .lbl{font-size:12px}
+.lp-shell .lp-dashboard .msg-list{margin-left:-20px;margin-right:-20px}
+.lp-shell .lp-arrival{min-height:382px}
+.lp-product-wrap>.lp-demo-note{z-index:1;margin-top:24px!important}
+.lp-hero{padding-bottom:86px}
+.lp-hero-glow{display:none}
+.lp-footer-stage{position:relative;isolation:isolate;background:#111114;overflow:hidden;color:#f2f2f5}
+.lp-flow-footer{inset:0}
+.lp-footer-stage .lp-final{position:relative;z-index:1;background:transparent!important;padding-top:96px;padding-bottom:82px}
+.lp-footer-stage .lp-footer{position:relative;z-index:1;background:transparent;color:#d7d7de;border-top:1px solid #ffffff0b;max-width:1200px}
+.lp-footer-stage .lp-footer .lp-brand{color:#f2f2f5}
+.lp-footer-stage .lp-footer p,.lp-footer-stage .lp-footer-links,.lp-footer-stage .lp-footer-bottom{color:#a0a0ab}
+.lp-footer-stage .lp-footer-links button{color:#a0a0ab}.lp-footer-stage .lp-footer-links :is(a,button):hover{color:#fff}
+.lp-footer-stage .lp-footer-bottom{border-color:#ffffff0b}
+.lp-motion-toggle{color:#9999a5;background:none;border:0;font-size:12px;padding:8px 0;min-height:40px}
+.lp-motion-toggle:hover{color:#fff}
+@media(max-width:1219px){.lp-shell .sidebar{width:218px;flex-basis:218px}.lp-shell .nav-item{font-size:13px}.lp-shell-pane .ed-layout{grid-template-columns:1fr}.lp-shell-pane .ed-stage{position:static}.lp-shell-pane.is-scrolling{height:610px;max-height:610px}.lp-shell .lp-dashboard .dashboard-two-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}.lp-shell .lp-dashboard .dashboard-two-side{display:none}.lp-shell .lp-dashboard .dashboard-two-grid>.card{height:390px}}
+@media(max-width:900px){.lp-shell .sidebar{display:none}.lp-shell-menu-toggle{width:36px;height:36px;background:transparent;border:0;color:#c2c2cb;display:flex;align-items:center;justify-content:center;flex:none}.lp-shell.menu-open .sidebar{display:flex;position:absolute;left:0;top:0;bottom:0;width:230px;z-index:12;box-shadow:12px 0 30px #0005}.lp-shell-scrim{display:block;position:absolute;inset:0;z-index:11;background:#0007;border:0}.lp-shell-breadcrumb{flex:1}.lp-flow-hero{width:calc(100% + 160px)}}
+@media(max-width:760px){.lp-product-wrap{margin-top:40px}.lp-window.lp-product{border-radius:12px;box-shadow:0 0 0 3px #ffffffb0,0 16px 30px -16px #181b2350}.lp-window-chrome{height:31px}.lp-window-dots{left:12px;gap:5px}.lp-window-dots i{width:7px;height:7px}.lp-window-environment{display:none}.lp-shell{min-height:0}.lp-shell-toolbar{padding:10px 11px 5px;gap:8px;min-height:51px}.lp-shell-breadcrumb{font-size:10px}.lp-shell-pane{padding:10px 12px 12px}.lp-shell-pane.is-scrolling{height:490px;max-height:490px}.lp-shell .lp-product-bottom{padding:8px 12px;min-height:46px}.lp-shell .lp-dashboard .dashboard-two-grid{grid-template-columns:minmax(0,1fr)}.lp-shell .lp-dashboard .dashboard-two-grid>.card{height:300px;padding:16px}.lp-shell .lp-dashboard .msg-list{margin-left:-16px;margin-right:-16px}.lp-shell .lp-dashboard .dashboard-two-chart{display:none}.lp-shell .lp-dashboard .dashboard-two .msg-card .who,.lp-shell .lp-dashboard .dashboard-two .msg-card .txt{font-size:13px}.lp-shell .lp-dashboard .dashboard-two .msg-card .when{font-size:10px}.lp-shell .lp-dashboard .dashboard-two .card-title{font-size:14px}.lp-shell-toolbar .lp-receive{font-size:10px!important;height:34px!important}.lp-shell .lp-arrival{min-height:260px}.lp-hero{padding-bottom:40px}.lp-flow-hero{height:540px;top:35%;width:calc(100% + 100px)}.lp-footer-stage .lp-final{padding-top:70px;padding-bottom:65px}.lp-footer-stage .lp-footer{margin:0 22px;padding-left:0;padding-right:0}.lp-footer-stage .lp-footer-bottom{align-items:center}.lp-native-connect .steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.lp-native-connect .step-line{display:none}.lp-shell-pane .steps{flex-wrap:wrap}.lp-shell-pane .step-line{display:none}}
+@media(max-width:360px){.lp-shell-breadcrumb{display:none}.lp-shell-toolbar .lp-receive{margin-left:auto}.lp-native-voices .voice-info{overflow:hidden}}
+@media(min-width:1220px){.lp-window .goal-mini-copy .gl-foot{flex-wrap:wrap;gap:5px 8px}.lp-window .goal-mini-copy .gl-foot>.num,.lp-window .goal-mini-copy .gl-foot>.sl-note{white-space:nowrap}}
+
+.lp-shell-popover{position:absolute;right:20px;bottom:56px;width:310px;z-index:6}.lp-shell-popover .lp-arrival{min-height:0}.lp-shell-popover .preview-inline{padding:10px}
+/* The app's phone navigation is a bottom bar. Only the embedded drawer keeps the desktop sidebar layout. */
+@media(max-width:900px){
+ .lp-shell.menu-open .sidebar{display:flex;flex-direction:column;align-items:stretch;height:auto;max-height:none}
+ .lp-shell .sidebar .logo{display:flex;width:auto;flex:none;height:56px;padding:0 16px}
+ .lp-shell .sidebar nav{display:flex;flex:1;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:2px;padding:4px 10px 16px;overflow:visible}
+ .lp-shell .sidebar .nav-section{display:block;padding:14px 8px 5px}
+ .lp-shell .sidebar .nav-item{width:100%;flex:none;min-width:0;height:34px;padding:0 10px;justify-content:flex-start;gap:10px;font-size:14px;white-space:normal}
+ .lp-shell .sidebar .nav-item svg{width:15px;height:15px}
+ .lp-shell .sidebar .sidebar-foot{display:block;padding:8px 10px 12px}
+}

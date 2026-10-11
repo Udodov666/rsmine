@@ -1,0 +1,46 @@
+# RSMine API Worker (план Step 1: каркас + LZT-прокси).
+# Деплой: npm run deploy (нужен wrangler login под Cloudflare-аккаунт владельца).
+
+name = "rsmine-api"
+main = "src/index.ts"
+compatibility_date = "2025-05-05"
+account_id = "d8fac7f94140405bdc9bdc43a4cd191a"
+
+# ── KV (создан 10.10.2026) ──
+[[kv_namespaces]]
+binding = "KV"
+id = "7ae4755dc18340c9b983d54e90cc05c5"
+
+# ── Durable Object relay (Step 5) ──
+[[durable_objects.bindings]]
+name = "RELAY_ROOM"
+class_name = "RelayRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RelayRoom"]
+
+# ── Домен: api.rsmine.ru + /api/* основного домена (same-origin для фронта) ──
+# Домен: кастом-домен api.rsmine.ru привязан через дашборд
+# (Workers & Pages → rsmine-api → Settings → Domains & Routes).
+# Через wrangler routes не аттачатся этим типом токена.
+
+# Durable Object: Workers & Pages → RSMINE_API → Settings → Bindings → Durable Object Namespace
+# (появится после первого деплоя класса RelayRoom — Step 5, включим тогда же)
+# [[durable_objects.bindings]]
+# name = "RELAY_ROOM"
+# class_name = "RelayRoom"
+
+# ── Secrets (CLI, не здесь): ──
+#   npx wrangler secret put TWITCH_CLIENT_ID
+#   npx wrangler secret put TWITCH_CLIENT_SECRET
+#   npx wrangler secret put SESSION_JWT_SECRET
+# Секреты Step 2 — каркас работает и без них.
+
+# ── Домен (после привязки rsmine.ru к Cloudflare): ──
+# [[routes]]
+# pattern = "api.rsmine.ru/*"
+# zone_name = "rsmine.ru"
+
+# [vars]
+# VITE_TWITCH_CLIENT_ID хранится на фронте (Pages env), не здесь.
