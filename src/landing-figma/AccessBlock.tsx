@@ -53,7 +53,6 @@ export default function AccessBlock() {
           <Github size={16} aria-hidden="true" style={{ marginRight: 6 }} />
           {desktop.secondary}
         </a>
-        <p className="fg-access-note">{desktop.note}</p>
       </article>
       <article className="fg-access-column" aria-labelledby="fg-source-title">
         <div className="fg-access-icons" aria-hidden="true">
