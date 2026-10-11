@@ -1,0 +1,186 @@
+/* Reference: two unboxed columns. Colors, typography and buttons from RSMine landing. */
+.fg-access {
+  width: 900px;
+  max-width: calc(100% - 80px);
+  margin: 180px auto 100px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 64px;
+  font-family:
+    'Geist',
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  color: #262626;
+}
+.fg-access-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-width: 0;
+}
+.fg-access-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 23px;
+  padding: 3px 9px;
+  background: rgba(20, 172, 122, 0.1);
+  color: #067653;
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+.fg-access-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  height: 38px;
+  gap: 4px;
+}
+.fg-access-icons span {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #efeff0;
+  color: #b9babc;
+}
+.fg-access-icons .fg-access-key {
+  color: #14ac7a;
+  background: #e8f3ee;
+}
+.fg-access-icons .fg-access-github {
+  color: #14ac7a;
+  background: #e8f3ee;
+}
+.fg-access .fg-access-column h2 {
+  margin: 22px 0 0;
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 500;
+  letter-spacing: -0.55px;
+  color: #212126;
+  text-transform: lowercase;
+}
+.fg-access .fg-access-column > p {
+  margin: 12px 0 0;
+  max-width: 370px;
+  font-size: 14px;
+  line-height: 21px;
+  flex: 1;
+}
+.fg-access .fg-access-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 45px;
+  padding: 11px 18px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 8.94766px;
+  background: linear-gradient(180deg, #10a45a, #0c9450);
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 21px;
+  font-weight: 500;
+  box-shadow:
+    inset 0 0 0 1.78953px #10a45a,
+    inset 0 0 0 2.6843px #ffffff33,
+    inset 0 0 8.94766px #ffffff33;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.fg-access .fg-access-button:hover {
+  background: linear-gradient(180deg, #14a85b, #10a45a);
+  box-shadow:
+    inset 0 0 0 1.78953px #14a85b,
+    inset 0 0 0 2.6843px #ffffff33,
+    inset 0 0 8.94766px #ffffff33;
+}
+.fg-access .fg-access-button:active {
+  background: linear-gradient(180deg, #0c9450, #0a8847);
+  box-shadow:
+    inset 0 0 0 1.78953px #0c9450,
+    inset 0 0 0 2.6843px #ffffff33,
+    inset 0 0 8.94766px #ffffff33;
+}
+.fg-access .fg-access-button.fg-access-button--github {
+  background: linear-gradient(180deg, #2a3038, #24292e);
+  box-shadow:
+    inset 0 0 0 1.78953px #24292e,
+    inset 0 0 0 2.6843px #ffffff33,
+    inset 0 0 8.94766px #ffffff33;
+}
+.fg-access .fg-access-button.fg-access-button--github:hover {
+  background: linear-gradient(180deg, #3a4048, #2a3038);
+  box-shadow:
+    inset 0 0 0 1.78953px #2a3038,
+    inset 0 0 0 2.6843px #ffffff33,
+    inset 0 0 8.94766px #ffffff33;
+}
+.fg-access .fg-access-button.fg-access-button--github:active {
+  background: linear-gradient(180deg, #1f2328, #181a1d);
+  box-shadow:
+    inset 0 0 0 1.78953px #1f2328,
+    inset 0 0 0 2.6843px #ffffff33,
+    inset 0 0 8.94766px #ffffff33;
+}
+.fg-access .fg-access-secondary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 4px;
+  margin-top: 2px;
+  text-decoration: none;
+  color: #525752;
+  font-size: 14px;
+  line-height: 20px;
+}
+.fg-access .fg-access-secondary:hover {
+  color: #13ad7a;
+}
+.fg-access-note {
+  color: #6b716c;
+  font-size: 12px;
+  line-height: 18px;
+}
+.fg-access a:focus-visible {
+  outline: 2px solid #9855fb;
+  outline-offset: 4px;
+}
+.fg-access + .fg-faq {
+  margin-top: 0;
+}
+@media (max-width: 760px) {
+  .fg-access {
+    max-width: calc(100% - 40px);
+    margin-top: 100px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 64px;
+  }
+  .fg-access .fg-access-column h2 {
+    font-size: 22px;
+  }
+  .fg-access .fg-access-column > p {
+    max-width: 360px;
+    font-size: 14px;
+    line-height: 23px;
+  }
+  .fg-access + .fg-faq {
+    margin-top: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fg-access a {
+    transition: none;
+  }
+}

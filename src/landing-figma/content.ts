@@ -1,8 +1,8 @@
 /** Figma presentation with project-specific content approved by the user. */
 /** Real project information; external URLs remain empty until supplied. */
 export const projectLinks = {
-  github: 'https://github.com/jdankinloh/rsmine-desktop/releases/latest',
-  telegram: '',
+  github: 'https://github.com/Udodov666/rsmine-desktop',
+  telegram: 'https://t.me/udodov228',
 };
 export const faqItems = [
   {
@@ -16,9 +16,22 @@ export const faqItems = [
       'Демо можно открыть бесплатно. Оно работает с примерами донатов: тестовые сообщения не переводят деньги и не являются настоящими платежами.',
   },
   {
+    question: 'Как получить приложение для Windows?',
+    answer:
+      'Приложение доступно в виде открытых исходников. На GitHub есть инструкция по установке зависимостей, запуску и самостоятельной сборке.',
+    link: {
+      href: 'https://github.com/Udodov666/rsmine-desktop#сборка-из-исходников',
+      label: 'Открыть инструкцию',
+    },
+  },
+  {
     question: 'Как добавить алерты в OBS?',
     answer:
-      'В панели откройте «Подключение OBS» и скопируйте ссылку на оверлей. В OBS добавьте источник «Браузер», вставьте ссылку в поле URL и проверьте отображение тестовым донатом.',
+      'Подготовьте и запустите приложение по инструкции на GitHub. Затем в панели откройте «Подключение OBS» и скопируйте ссылку на оверлей. В OBS добавьте источник «Браузер», вставьте ссылку в поле URL и проверьте отображение тестовым донатом.',
+    link: {
+      href: 'https://github.com/Udodov666/rsmine-desktop#сборка-из-исходников',
+      label: 'Открыть инструкцию',
+    },
   },
   {
     question: 'Что можно изменить в оформлении алерта?',

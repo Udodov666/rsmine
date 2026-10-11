@@ -7,6 +7,7 @@ import HeroApp from './HeroApp';
 import Voices from './Voices';
 import Designer from './Designer';
 import ObsGuide from './ObsGuide';
+import AccessBlock from './AccessBlock';
 import { Reveal } from './Reveal';
 import { faqItems, projectLinks } from './content';
 import './landing-figma.css';
@@ -172,9 +173,9 @@ export default function LandingFigma() {
             >
               донаты с lolzteam
               <br />
-              <mark>бесплатное</mark>
+              <mark>бесплатный</mark>
               <br />
-              подключение
+              сервис для стрима
             </motion.h1>
             <motion.p
               initial={reduce ? false : { opacity: 0, y: 22 }}
@@ -197,14 +198,6 @@ export default function LandingFigma() {
               <a className="fg-demo-link" href="#/d/landing-demo?demo=1">
                 Посмотреть демо-донат
               </a>
-              <a
-                className="fg-demo-link"
-                href={projectLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Скачать для Windows
-              </a>
             </motion.div>
           </div>
           <motion.div
@@ -219,6 +212,7 @@ export default function LandingFigma() {
         <Voices />
         <Designer />
         <ObsGuide />
+        <AccessBlock />
         <section id="figma-faq" className="fg-faq">
           <Reveal>
             <h2>частые вопросы</h2>
@@ -253,7 +247,21 @@ export default function LandingFigma() {
                       }
                       style={{ overflow: 'hidden' }}
                     >
-                      <p>{item.answer}</p>
+                      <p>
+                        {item.answer}
+                        {item.link && (
+                          <>
+                            {' '}
+                            <a
+                              href={item.link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {item.link.label}
+                            </a>
+                          </>
+                        )}
+                      </p>
                     </motion.div>
                   )}
                 </AnimatePresence>

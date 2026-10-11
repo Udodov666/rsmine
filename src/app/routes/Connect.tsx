@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 import { getProvider } from '../../data/providerSwitch';
 import { apiBase, authHeaders, getTwitch, isAuthed, twitchAuthorizeUrl } from '../../data/live/auth';
-import { Check, Copy, Download, ExternalLink, Eye, EyeOff, ShieldCheck } from 'lucide-react';
+import { Check, Copy, ExternalLink, Eye, EyeOff, ShieldCheck } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faRotateRight } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../../components/Button';
 import { useToast } from '../../components/Toast';
 import type { DataProvider } from '../../data/provider';
 import type { Donation } from '../../data/types';
 import { sendTestToOverlay, showDonationPreview } from '../../components/AlertPreview';
 import { copyText } from '../../lib/format';
+import { accessLinks } from '../../landing-figma/access-content';
 
 const DEMO_SECRET = 'demo-secret-123';
 const DEMO_STEPS = ['Ключ', 'Ссылка', 'OBS', 'Проверка'];
@@ -122,7 +123,6 @@ function LiveConnect() {
   const overlayKey = localStorage.getItem(LS_SECRET) ?? '';
   const overlayUrl = `${origin}/#/overlay/${encodeURIComponent(slug)}?k=${encodeURIComponent(overlayKey)}`;
   const goalUrl = `${origin}/#/goal/${encodeURIComponent(slug)}`;
-  const downloadUrl = (import.meta.env.VITE_DESKTOP_URL as string | undefined) ?? '/download';
 
   async function copyUrl() {
     if (await copyText(overlayUrl)) toast('Ссылка скопирована');
@@ -136,8 +136,9 @@ function LiveConnect() {
     <div className="settings-wrap">
       <h1 className="page-h1">Подключение</h1>
       <div className="page-sub">
-        Программа на твоём ПК держит платежи (LZT-токен не покидает компьютер),
-        оверлей в OBS показывает оповещения. Четыре шага — и донаты идут на стрим.
+        Программа на твоём ПК держит платежи (LZT-токен хранится локально и
+        используется приложением для запросов к LZT API), оверлей в OBS показывает
+        оповещения. Четыре шага — и донаты идут на стрим.
       </div>
 
       <div className="steps">
@@ -158,17 +159,26 @@ function LiveConnect() {
       <div className="gcard">
         {step === 0 && (
           <>
-            <div className="pg-title">Скачай программу и привяжи аккаунт</div>
+            <div className="pg-title">Подготовьте приложение</div>
             <div className="pg-desc">
-              Windows x64, живёт в трее. Секрет связывает программу с этим аккаунтом:
-              на сервере лежит только хеш, сам секрет показывается один раз.
+              Соберите и запустите приложение для Windows по инструкции на GitHub.
+              Затем укажите параметры подключения и добавьте оверлей в OBS.
             </div>
             <div style={{ marginTop: 12 }}>
-              <Button variant="primary" onClick={() => window.open(downloadUrl, '_blank')}>
-                <Download size={14} strokeWidth={1.8} style={{ marginRight: 6, verticalAlign: -2 }} />
-                Скачать RSMine для Windows
+              <Button
+                variant="primary"
+                onClick={() => window.open(accessLinks.desktopBuild, '_blank')}
+              >
+                <FontAwesomeIcon icon={faBookOpen} style={{ marginRight: 7, fontSize: 13 }} />
+                Открыть инструкцию
               </Button>
             </div>
+            <ol className="obs-ol" style={{ marginTop: 14 }}>
+              <li>Откройте инструкцию и подготовьте приложение.</li>
+              <li>Запустите приложение и укажите параметры подключения.</li>
+              <li>Скопируйте ссылку на оверлей и добавьте источник «Браузер» в OBS.</li>
+              <li>Проверьте алерт тестовым донатом.</li>
+            </ol>
             <div style={{ marginTop: 18 }}>
               <span className="glabel" style={{ display: 'block', marginBottom: 8 }}>Секрет программы</span>
               {secret ? (
