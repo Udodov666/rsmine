@@ -49,11 +49,14 @@ export function apiBase(): string {
 }
 
 /** Ссылка на Twitch authorize (implicit flow, токен приходит в #fragment).
+ *  redirect_uri жёстко зафиксирован на https://rsmine.ru/auth/callback, чтобы OAuth
+ *  работал одинаково с любого origin (pages.dev preview, localhost и т.д.) —
+ *  Twitch примет токен, а редирект всегда приведёт пользователя на прод.
  *  null — если VITE_TWITCH_CLIENT_ID не настроен. */
 export function twitchAuthorizeUrl(): string | null {
   const clientId = import.meta.env.VITE_TWITCH_CLIENT_ID as string | undefined;
   if (!clientId) return null;
-  const redirect = encodeURIComponent(`${window.location.origin}/auth/callback`);
+  const redirect = encodeURIComponent('https://rsmine.ru/auth/callback');
   return (
     'https://id.twitch.tv/oauth2/authorize' +
     `?client_id=${clientId}&redirect_uri=${redirect}` +
